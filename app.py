@@ -11,8 +11,11 @@ app = FastAPI(
     version="1.0"
 )
 
-tokenizer = T5Tokenizer.from_pretrained("./saved_summary_model")
-model = T5ForConditionalGeneration.from_pretrained("./saved_summary_model")
+# tokenizer = T5Tokenizer.from_pretrained("./saved_summary_model")
+# model = T5ForConditionalGeneration.from_pretrained("./saved_summary_model")
+
+tokenizer = T5Tokenizer.from_pretrained("t5-small")
+model = T5ForConditionalGeneration.from_pretrained("t5-small")
 
 device = torch.device("cpu")
 model.to(device)
